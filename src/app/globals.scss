@@ -1,0 +1,41 @@
+@use "./variables" as Variables;
+
+:root {
+
+}
+
+body {
+    margin: 0;
+    font-weight: 500;
+}
+
+b {
+    font-weight: 700;
+}
+
+a {
+    position: relative;
+    color: Variables.$red;
+    text-decoration: none;
+
+    background-image: linear-gradient(to bottom, white 70%, transparent 70%), linear-gradient(to right, rgba(Variables.$red, 0.1) 0% 100%);
+    background-size: 100% 100%;
+    background-position: 100% 0;
+    transition: 1s background-position;
+
+    &:link {
+
+    }
+
+    &:visited {
+        color: Variables.$red;
+    }
+
+    &:hover {
+        color: darken(Variables.$red, 20%);
+    }
+
+    &:active {
+
+    }
+}

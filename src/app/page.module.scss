@@ -1,0 +1,70 @@
+@use "./variables" as Variables;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+
+    @media (min-width: Variables.$medium-breakpoint) {
+        flex-direction: row;
+        height: 100vh;
+    }
+}
+
+.introAnimation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: Variables.$dark;
+
+    video {
+        max-width: 240px;
+    }
+
+    @media (min-width: Variables.$small-breakpoint) {
+        video {
+            max-width: 320px;
+        }
+    }
+
+    @media (min-width: Variables.$medium-breakpoint) {
+        width: 50%;
+
+        video {
+            max-width: 400px;
+        }
+    }
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 2em;
+    color: Variables.$dark;
+
+    h2, p {
+        margin: 0;
+    }
+
+    @media (min-width: Variables.$small-breakpoint) {
+        padding: 4em;
+    }
+
+    //@media (min-width: $medium-breakpoint) {
+    //    padding: 4em;
+    //}
+}
+
+.textInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    max-width: 32em;
+}

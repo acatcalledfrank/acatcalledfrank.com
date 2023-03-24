@@ -1,91 +1,57 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import clsx from "clsx";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+import styles from "./page.module.scss";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    return (
+        <main className={clsx(styles.main, inter.className)}>
+            <div className={styles.introAnimation}>
+                <video id="background-video" autoPlay muted>
+                    <source src="/assets/video/logo.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div className={styles.textContent}>
+                <div className={styles.textInner}>
+                    <p>
+                        <em>Hi there.</em>
+                    </p>
+                    <p>My name's Tom.</p>
+                    <p>
+                        I'm a freelance <b>creative developer</b>.
+                    </p>
+                    <p>
+                        I've worked in digital for nearly twenty years in
+                        various roles, from UX and front-end to copywriting and
+                        concept development.
+                    </p>
+                    <p>
+                        These days, I mostly make <b>data visualisations</b> and{" "}
+                        <b>web apps</b>.
+                    </p>
+                    <p>
+                        I'm currently working with{" "}
+                        <a
+                            href={"https://informationisbeautiful.net/"}
+                            target={"_blank"}>
+                            Information is Beautiful
+                        </a>{" "}
+                        to develop{" "}
+                        <a href={"https://vizsweet.com/"} target={"_blank"}>
+                            VizSweet
+                        </a>
+                        , a high-end data visualisation platform.
+                    </p>
+                    <p>
+                        Drop me an email at{" "}
+                        <a href={"mailto:tom@acatcalledfrank.com"}>
+                            tom@acatcalledfrank.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </main>
+    );
 }
