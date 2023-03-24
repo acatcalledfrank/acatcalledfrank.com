@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <main className={clsx(styles.main, inter.className)}>
             <div className={styles.introAnimation}>
-                <video id="background-video" autoPlay muted>
+                <video id="background-video" autoPlay muted playsInline>
                     <source src="/assets/video/logo.mp4" type="video/mp4" />
                 </video>
             </div>
